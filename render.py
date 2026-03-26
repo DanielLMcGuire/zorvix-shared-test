@@ -31,18 +31,16 @@ def plot_csv(input_path, output_path):
     plt.legend()
 
     plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
+    plt.savefig(output_path, format="svg")
     plt.close()
-
 
 def main():
     parser = argparse.ArgumentParser(description="Render results into graph")
     parser.add_argument("-i", "--input", required=True, help="Path to input CSV file")
-    parser.add_argument("-o", "--output", default="output.png", help="Output PNG file")
+    parser.add_argument("-o", "--output", default="output.svg", help="Output SVG file")
     args = parser.parse_args()
 
     plot_csv(args.input, args.output)
-
 
 if __name__ == "__main__":
     main()
