@@ -1,6 +1,6 @@
 {
   "name": "zorvix-shared-performance-test",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "test.mjs",
   "description": "",
   "keywords": [],
@@ -8,7 +8,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node test.mjs"
+    "start": "npm run test && npm run render",
+    "test": "node test.mjs --out bench.csv",
+    "render": "python render.py -i bench.csv -o bench.svg"
   },
   "dependencies": {
     "0http": "^4.4.0",
