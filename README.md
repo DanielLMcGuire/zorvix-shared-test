@@ -2,6 +2,10 @@ A throughput and latency benchmark for **Zorvix**, **Express**, and **0http**.
 
 Each framework runs an identical set of routes and middleware, and all three are hammered concurrently so results are directly comparable.
 
+The only big asterisk is the fact that Zorvix supports workers, you can disable them, but they are enabled.
+
+To be clear, the results are expected to be that 0http is 5-10% faster than Zorvix unless using workers. Express on the other hand looses hard against both.
+
 ---
 
 The script runs all three servers on separate ports, then runs 10 benchmark suites back-to-back. Each suite:
